@@ -1,0 +1,245 @@
+*{                                               /* 全局通配符选择器，统一默认样式 */
+    padding: 0;                                  /* 取消所有元素的内边距 */
+    margin: 0;                                   /* 取消所有元素的外边距 */
+    font-family: "HarmonyOS_Sans_SC";            /* 设置全局默认字体 */
+}
+html {
+    scroll-behavior: smooth;                     /* 点击锚点时平滑滚动 */
+}
+header{                                          /* 头部容器 */
+    background-color: #b98263;                   /* 设置头部背景色 */
+    height: 80px;                                /* 设置头部高度 */
+    width: 100%;                                 /* 头部宽度占满页面 */
+    position: fixed;                             /* 为内部绝对定位元素提供参考 */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+h1{                                              /* 网站标题元素 */
+    color: #ffffff;                              /* 标题文字颜色 */
+    position: absolute;                          /* 绝对定位以放置在头部 */
+    left: 40px;                                  /* 标题距左侧距离 */
+    top: 0;                                      /* 将标题与头部顶部对齐 */
+    line-height: 80px;                           /* 让文字垂直居中头部高度 */
+    background-image: url(images/logo.png);      /* 设置背景图为 logo */
+    background-repeat: no-repeat;                /* 背景图不重复 */
+    background-position: center;                 /* 背景图居中对齐 */
+    height: 80px;                                /* 明确设定标题高度以显示背景图 */
+    background-size: 200px auto;                 /* 背景图宽度 200px，高度自适应 */
+    width: 260px;                                /* 标题容器宽度 */
+    text-indent: -9999px;                        /* 将文字移出视口用于仅显示背景图 */
+}
+header ul {                                      /* 头部导航列表 */
+    position: absolute;                          /* 绝对定位放置导航列表 */
+    right:5vw;                                   /* 导航距离右侧视口宽度的 5% */
+    top:0;                                       /* 导航顶部对齐头部 */
+    line-height: 80px;                           /* 列表项垂直居中头部高度 */
+}
+header li {                                      /* 导航列表项 */
+    display: inline;                             /* 列表项横向排列 */
+    margin-right: 4vw;                           /* 列表项之间的右侧间距 */
+}
+header a {                                       /* 导航链接 */
+    color: #ffffff;                              /* 链接文字颜色 */
+    text-decoration: none;                       /* 去掉下划线 */
+}
+header a:hover{                                  /* 导航链接悬停状态 */
+    text-decoration: underline;                  /* 悬停时显示下划线 */
+}
+.hello {                                         /* 首屏欢迎区块 */
+    background-color: #f9dcc9;                   /* 欢迎区块背景色 */
+    color:#6F3F29;                               /* 欢迎区块文字颜色 */
+    height: 85vh;                                /* 区块高度占视口 85% */
+    background-image: url(images/背景3.png);       /* 设置背景图 */
+    background-repeat: no-repeat;                /* 背景图不重复 */
+    background-size: cover;                      /* 背景图覆盖容器 */
+    background-position: center 0px;             /* 背景图竖直向下位移 0px */
+    display: flex;                               /* 使用弹性布局 */
+    flex-direction: column;                      /* 子元素纵向排列 */
+    align-items: center;                         /* 子元素水平居中 */
+    justify-content: center;                     /* 子元素垂直居中 */
+    position: relative;                          /* 作为内部绝对定位参考 */
+    margin-top: 80px;                            /* 新增：为header留出空间 */
+
+}
+.hello h2 {                                      /* 欢迎区块主标题 */
+    font-size: 60px;                             /* 主标题字号 */
+}
+.hello p {                                       /* 欢迎区块段落 */
+    color: #ba7b57;                              /* 段落文字颜色 */
+    font-size: 16px;                             /* 段落字号 */
+    font-weight: 00;                             /* 段落字重（原设计值保持） */
+    margin: 25px 0;                              /* 段落上下间距 */
+}
+.hello a {                                       /* 欢迎区块按钮链接 */
+    color: #c48b69;                              /* 按钮文字颜色 */
+    text-decoration: none;                       /* 去除按钮文字下划线 */
+    border: 1.5px solid #d7a88c;                   /* 按钮边框颜色 */
+    padding: 8px 18px;                           /* 按钮内边距 */
+    border-radius: 5px;                          /* 按钮圆角 */
+}
+.hello-coffee {                                  /* 欢迎区块底部咖啡图片 */
+    position: absolute;                          /* 绝对定位固定位置 */
+    bottom: 0px;                                 /* 距离区块底部 0 像素 */
+    height: clamp(80px, 20vh, 200px);            /* 限制图片高度范围 */
+    width: auto;                                 /* 宽度随高度自适应 */
+    pointer-events: none;                        /* 禁止鼠标事件防止遮挡 */
+    opacity: 0.9;                                /* 图片透明度 */
+}
+@media (max-height: 600px) {                     /* 当视口高度不足时隐藏咖啡图 */
+    .hello-coffee {                              /* 选择咖啡图片 */
+        display: none;                           /* 隐藏图像避免遮挡按钮 */
+    }
+}
+.slogan {                                        /* 标语区块 */
+    background-color: #6F3F29;                   /* 标语区块背景色 */
+    color: #f9dcc9;                              /* 标语文字颜色 */
+    height: 250px;                               /* 区块高度 */
+    display: flex;                               /* 使用弹性布局 */
+    align-items: center;                         /* 子元素垂直居中 */
+    justify-content: center;                     /* 子元素水平居中 */
+    font-size: 20px;                             /* 标语文字字号 */
+    line-height: 1.8em;                          /* 标语行高 */
+    text-align: center;                          /* 文本居中对齐 */
+}
+.shop {                                          /* 店铺介绍区块 */
+    display: flex;                               /* 使用弹性布局横向排列 */
+}
+.shop img {                                      /* 店铺区块中的图片 */
+    width: 50%;                                  /* 图片占容器宽度一半 */
+}
+.info {                                          /* 店铺文字信息容器 */
+    width: 50%;                                  /* 容器宽度占一半 */
+    background-color: #fcf4eb;                   /* 容器背景色 */
+    display:flex;                                /* 使用弹性布局 */
+    flex-direction: column;                      /* 子元素纵向排列 */
+    align-items: center;                         /* 子元素水平居中 */
+    justify-content: center;                     /* 子元素垂直居中 */
+}
+.info h2 {                                       /* 店铺标题 */
+    color: #6F3F29;                              /* 标题文字颜色 */
+    font-size: 40px;                             /* 标题字号 */
+    margin-bottom: 30px;                         /* 标题与段落的间距 */
+}
+.info p {                                        /* 店铺描述段落 */
+    color: #B98263;                              /* 段落文字颜色 */
+    text-align:center;                           /* 文本居中对齐 */
+    line-height: 2em;                            /* 行高 */
+}
+.product {                                       /* 商品列表区块 */
+    display:flex;                                /* 使用弹性布局 */
+    color: #b37b5b;
+    background-color: #fdf9f4;                   /* 区块背景色 */
+    justify-content: space-between;              
+    align-items: center;                         /* 子元素垂直居中 */
+    padding: 100px 150px 80px;                
+    gap: 30px;                                  
+    scroll-margin-top: 80px;                    /* 锚点滚动时保留头部高度 */
+}
+.product div {                                   /* 单个商品容器 */
+    width: 300px;                                /* 容器固定宽度 */
+    text-align: center;                          /* 内容居中对齐 */
+}
+.product img {                                   /* 商品图片 */
+    width:100%;                                  /* 图片宽度充满容器 */
+    border-radius: 10px;                         /* 图片圆角 */
+}
+.product h3 {                                    /* 商品标题 */
+    color: #734028;
+    font-size: 20px;                             /* 商品标题字号 */
+    margin: 20px 0;                              /* 标题上下间距 */
+}
+.product p {
+    font-size: 14px;
+    line-height: 1.6em;
+}
+.email {
+    background-color: #B98263;
+    color: #ffecd6;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;                      /* 子元素纵向排列 */
+    align-items: center;   
+}
+.email p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.email input,.email button {
+    background-color: transparent;
+    color: #ffecd6;
+    border: 1px solid #ffecd6;
+    padding: 8px;
+    border-radius: 5px;
+}
+.email input {
+    width: 200px;
+    margin-right: 15px;
+}
+.email button {
+    width: 80px;
+    cursor: pointer;
+}
+input::placeholder {
+    color: #f9dcc96b;
+}
+input:focus {
+    outline:none;
+    border-color: #f7d0b7;
+}
+.menu {
+    display: none;
+}
+footer {                                         /* 页脚区块 */
+    background-color: #6F3F29;                   /* 页脚背景色 */
+    color: #f9dcc9;                              /* 页脚文字颜色 */
+    height: 60px;                                /* 页脚高度 */
+    display: flex;                               /* 使用弹性布局 */
+    align-items: center;                         /* 子元素垂直居中 */
+    justify-content: center;                     /* 子元素水平居中 */
+    font-size: 14px;                             /* 页脚文字字号 */
+}
+                                                 /* 响应式设计语法 */
+@media screen and (max-width: 768px) {
+    header ul {
+        display: none;
+    }
+    header h1 {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .hello h2 {                                   
+        font-size: 40px;     
+    }                     
+    .menu {
+        display: block;
+        background-color: transparent;
+        color: #fcf4eb;
+        font-size: 35px;
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        border: none;
+        cursor: pointer;
+    }
+    .shop {
+        flex-direction: column;
+    }
+    .shop img {
+        width: 100%;
+    }
+    .info {
+        width: 100%;
+        padding: 40px 0;
+    }
+    .info h2 {
+        font-size: 30px;
+    }
+    .product{
+        flex-direction: column;
+        padding: 60px 0;
+    }
+    .product div {
+        margin-bottom: 30px;
+    }
+}
