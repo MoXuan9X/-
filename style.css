@@ -74,9 +74,10 @@ header a:hover{                                  /* 导航链接悬停状态 */
 .hello a {                                       /* 欢迎区块按钮链接 */
     color: #ae6c46;                              /* 按钮文字颜色 */
     text-decoration: none;                       /* 去除按钮文字下划线 */
-    border: 1.5px solid #ad6f4c;                   /* 按钮边框颜色 */
+    border: 1.5px solid #ad6f4c;                 /* 按钮边框颜色 */
     padding: 8px 18px;                           /* 按钮内边距 */
     border-radius: 5px;                          /* 按钮圆角 */
+    font-weight: 600;                            /* 提升按钮文字粗细 */
 }
 .hello-coffee {                                  /* 欢迎区块底部咖啡图片 */
     position: absolute;                          /* 绝对定位固定位置 */
@@ -232,6 +233,10 @@ footer {                                         /* 页脚区块 */
         width: 100%;
         padding: 40px 0;
     }
+    .info p {                                        /* 店铺描述段落 */
+        padding: 0 20px;                     /* 增加内边距避免贴边 */
+        box-sizing: border-box;                        /* 行高 */
+    }
     .info h2 {
         font-size: 30px;
     }
@@ -241,5 +246,9 @@ footer {                                         /* 页脚区块 */
     }
     .product div {
         margin-bottom: 30px;
+    }
+    .slogan {
+        padding: 0 20px;                       /* 标语区块左右留白 */
+        box-sizing: border-box;
     }
 }
