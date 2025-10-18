@@ -68,13 +68,13 @@ header a:hover{                                  /* 导航链接悬停状态 */
 .hello p {                                       /* 欢迎区块段落 */
     color: #ba7b57;                              /* 段落文字颜色 */
     font-size: 16px;                             /* 段落字号 */
-    font-weight: 00;                             /* 段落字重（原设计值保持） */
+    font-weight: 2;                             /* 段落字重（原设计值保持） */
     margin: 25px 0;                              /* 段落上下间距 */
 }
 .hello a {                                       /* 欢迎区块按钮链接 */
-    color: #c48b69;                              /* 按钮文字颜色 */
+    color: #c28969;                              /* 按钮文字颜色 */
     text-decoration: none;                       /* 去除按钮文字下划线 */
-    border: 1.5px solid #d7a88c;                   /* 按钮边框颜色 */
+    border: 1.5px solid #c9997d;                   /* 按钮边框颜色 */
     padding: 8px 18px;                           /* 按钮内边距 */
     border-radius: 5px;                          /* 按钮圆角 */
 }
